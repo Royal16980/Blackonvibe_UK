@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>You're In! | BlackOnVibe UK Raffle</title>
+  <meta name="robots" content="noindex"/>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#f2d00d",
+            "background-dark": "#0a0a0a",
+            "neutral-dark": "#1a1a1a",
+            "ghana-red": "#ff0000",
+            "ghana-green": "#008751",
+            "uk-blue": "#00247d",
+            "uk-red": "#cf142b",
+          },
+          fontFamily: { "display": ["Space Grotesk", "sans-serif"] },
+        },
+      },
+    }
+  </script>
+  <style>
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+    .float { animation: float 3s ease-in-out infinite; }
+    @keyframes confetti-fall {
+      0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+    }
+    .confetti-piece {
+      position: fixed;
+      top: -20px;
+      width: 10px;
+      height: 10px;
+      animation: confetti-fall linear forwards;
+    }
+  </style>
+</head>
+<body class="bg-background-dark text-white font-display min-h-screen flex flex-col">
+
+  <!-- Ghana/UK top stripe -->
+  <div class="h-1.5 w-full flex flex-shrink-0">
+    <div class="flex-1 bg-ghana-red"></div>
+    <div class="flex-1 bg-primary"></div>
+    <div class="flex-1 bg-ghana-green"></div>
+    <div class="flex-1 bg-white"></div>
+    <div class="flex-1 bg-uk-blue"></div>
+    <div class="flex-1 bg-uk-red"></div>
+  </div>
+
+  <!-- Main content -->
+  <main class="flex-1 flex items-center justify-center px-6 py-20">
+    <div class="max-w-2xl w-full text-center">
+
+      <!-- Animated icon -->
+      <div class="float mb-8 inline-block">
+        <div class="w-28 h-28 bg-primary rounded-full flex items-center justify-center mx-auto shadow-2xl shadow-primary/30">
+          <span class="material-symbols-outlined text-background-dark text-6xl">celebration</span>
+        </div>
+      </div>
+
+      <!-- Headline -->
+      <h1 class="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-4">
+        You're <span class="text-primary">In!</span>
+      </h1>
+      <p class="text-xl text-gray-400 mb-2 font-light">Your raffle entry has been received.</p>
+      <p class="text-gray-500 text-sm mb-12">Winners are drawn daily at <strong class="text-white">8PM GMT</strong> — check our socials to see if you've won!</p>
+
+      <!-- Event recap -->
+      <div class="bg-neutral-dark rounded-2xl border border-white/10 p-8 mb-10 text-left">
+        <h3 class="text-xs font-black uppercase tracking-widest text-gray-500 mb-6">Event Details</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div class="flex gap-3">
+            <span class="material-symbols-outlined text-primary">mic_external_on</span>
+            <div>
+              <p class="text-xs text-gray-500 uppercase tracking-widest">Headliner</p>
+              <p class="font-bold">Sarkodie</p>
+            </div>
+          </div>
+          <div class="flex gap-3">
+            <span class="material-symbols-outlined text-primary">music_note</span>
+            <div>
+              <p class="text-xs text-gray-500 uppercase tracking-widest">Featured</p>
+              <p class="font-bold">Kweku Flick</p>
+            </div>
+          </div>
+          <div class="flex gap-3">
+            <span class="material-symbols-outlined text-primary">calendar_today</span>
+            <div>
+              <p class="text-xs text-gray-500 uppercase tracking-widest">Date &amp; Time</p>
+              <p class="font-bold">7th March 2026 &bull; 8PM – 2AM</p>
+            </div>
+          </div>
+          <div class="flex gap-3">
+            <span class="material-symbols-outlined text-primary">location_on</span>
+            <div>
+              <p class="text-xs text-gray-500 uppercase tracking-widest">Venue</p>
+              <p class="font-bold">The Hangar, Wolverhampton</p>
+              <p class="text-xs text-gray-600">Pearson Street, WV2 4HP</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Social follow CTAs -->
+      <div class="mb-10">
+        <p class="text-sm text-gray-400 mb-5">Follow us to catch the daily winner announcements at 8PM</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="https://instagram.com/blackonvibe_uk" target="_blank" rel="noopener noreferrer"
+             class="flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-500 rounded-xl font-bold text-white hover:scale-105 transition-transform">
+            <span class="material-symbols-outlined">alternate_email</span>
+            Follow on Instagram
+          </a>
+          <a href="https://tiktok.com/@blackonvibe_uk" target="_blank" rel="noopener noreferrer"
+             class="flex items-center justify-center gap-2 px-8 py-4 bg-neutral-dark border border-white/10 rounded-xl font-bold text-white hover:border-primary hover:scale-105 transition-all">
+            <span class="material-symbols-outlined">video_library</span>
+            Follow on TikTok
+          </a>
+        </div>
+      </div>
+
+      <!-- Buy tickets CTA -->
+      <div class="bg-gradient-to-r from-ghana-red via-primary to-ghana-green p-px rounded-xl mb-10">
+        <div class="bg-background-dark rounded-xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="text-left">
+            <p class="font-bold text-lg">Want to guarantee your spot?</p>
+            <p class="text-gray-400 text-sm">Purchase tickets directly at angelcommunities.org</p>
+          </div>
+          <a href="https://angelcommunities.org" target="_blank" rel="noopener noreferrer"
+             class="flex-shrink-0 px-8 py-3 bg-primary text-background-dark font-black rounded-lg uppercase tracking-tight hover:brightness-110 transition-all">
+            Buy Tickets
+          </a>
+        </div>
+      </div>
+
+      <!-- Back to home -->
+      <a href="/" class="text-gray-500 hover:text-primary transition-colors text-sm underline">
+        ← Back to the raffle page
+      </a>
+    </div>
+  </main>
+
+  <!-- Bottom stripe -->
+  <div class="h-1.5 w-full flex flex-shrink-0">
+    <div class="flex-1 bg-ghana-red"></div>
+    <div class="flex-1 bg-primary"></div>
+    <div class="flex-1 bg-ghana-green"></div>
+    <div class="flex-1 bg-white"></div>
+    <div class="flex-1 bg-uk-blue"></div>
+    <div class="flex-1 bg-uk-red"></div>
+  </div>
+
+  <script>
+    // Simple confetti burst on load
+    const colors = ['#f2d00d', '#ff0000', '#008751', '#00247d', '#cf142b', '#ffffff'];
+    function createConfetti() {
+      for (let i = 0; i < 60; i++) {
+        const piece = document.createElement('div');
+        piece.classList.add('confetti-piece');
+        piece.style.left = Math.random() * 100 + 'vw';
+        piece.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        piece.style.width = (Math.random() * 10 + 6) + 'px';
+        piece.style.height = (Math.random() * 10 + 6) + 'px';
+        piece.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+        piece.style.animationDuration = (Math.random() * 3 + 2) + 's';
+        piece.style.animationDelay = Math.random() * 2 + 's';
+        document.body.appendChild(piece);
+        piece.addEventListener('animationend', () => piece.remove());
+      }
+    }
+    createConfetti();
+  </script>
+</body>
+</html>

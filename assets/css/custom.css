@@ -1,0 +1,234 @@
+/* ============================================
+   BlackOnVibe UK — Custom Styles
+   Supplements Tailwind CSS
+   ============================================ */
+
+/* ---- Scroll Animations ---- */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+[data-animate].visible {
+  opacity: 1;
+  transform: none;
+}
+/* Staggered children */
+[data-animate]:nth-child(2) { transition-delay: 0.1s; }
+[data-animate]:nth-child(3) { transition-delay: 0.2s; }
+[data-animate]:nth-child(4) { transition-delay: 0.3s; }
+
+/* ---- Carousel ---- */
+@keyframes carousel {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-carousel {
+  animation: carousel 45s linear infinite;
+  width: max-content;
+  display: flex;
+}
+.animate-carousel:hover {
+  animation-play-state: paused;
+}
+
+/* ---- Urgency Marquee ---- */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 35s linear infinite;
+  display: inline-flex;
+  width: max-content;
+}
+
+/* ---- Countdown Widget ---- */
+#event-countdown {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: flex-end;
+}
+.countdown-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 3.5rem;
+}
+.countdown-val {
+  font-size: 2.5rem;
+  font-weight: 900;
+  line-height: 1;
+  color: #f2d00d;
+  font-variant-numeric: tabular-nums;
+}
+.countdown-label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #6b7280;
+  margin-top: 4px;
+}
+.countdown-sep {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #f2d00d;
+  opacity: 0.5;
+  padding-bottom: 0.5rem;
+}
+
+/* ---- FAQ Accordion ---- */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+.faq-answer.open {
+  max-height: 400px;
+}
+.faq-icon {
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
+}
+.faq-item.active {
+  border-color: rgba(242, 208, 13, 0.3);
+}
+.faq-trigger {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+.faq-trigger:hover {
+  color: #f2d00d;
+}
+
+/* ---- Form Error States ---- */
+.field-error {
+  border-color: #ff0000 !important;
+  box-shadow: 0 0 0 1px rgba(255, 0, 0, 0.3);
+}
+.error-msg {
+  color: #ff4444;
+  font-size: 0.7rem;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.error-msg::before {
+  content: '!';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  background: #ff4444;
+  color: white;
+  border-radius: 50%;
+  font-size: 9px;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+input.field-error,
+input.field-error:focus {
+  outline: none;
+  ring: none;
+}
+
+/* ---- Back to Top Button ---- */
+#back-to-top {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+}
+#back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ---- Hamburger Menu Transitions ---- */
+#ham-1, #ham-2, #ham-3 {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform-origin: center;
+}
+body.menu-open #ham-1 {
+  transform: translateY(8px) rotate(45deg);
+}
+body.menu-open #ham-2 {
+  opacity: 0;
+  transform: scaleX(0);
+}
+body.menu-open #ham-3 {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ---- Gold shimmer utility ---- */
+.gold-shimmer {
+  background: linear-gradient(90deg, #f2d00d 0%, #fff3a0 50%, #f2d00d 100%);
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+}
+@keyframes shimmer {
+  0%   { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+/* ---- Smooth scroll ---- */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ---- Body padding for fixed header ---- */
+body {
+  padding-bottom: 40px; /* space for urgency bar */
+}
+
+/* ---- Utility: sr-only ---- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border-width: 0;
+}
+.focus\:not-sr-only:focus {
+  position: absolute;
+  width: auto;
+  height: auto;
+  padding: 0.5rem 1rem;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* ---- Mobile menu transition ---- */
+#mobile-menu {
+  transition: max-height 0.3s ease;
+}
+
+/* ---- Form submit loading state ---- */
+#submit-btn.loading {
+  position: relative;
+  color: transparent;
+}
+#submit-btn.loading::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='10' fill='none' stroke='%230a0a0a' stroke-width='3' stroke-dasharray='30 70' stroke-linecap='round'%3E%3CanimateTransform attributeName='transform' type='rotate' from='0 12 12' to='360 12 12' dur='0.8s' repeatCount='indefinite'/%3E%3C/circle%3E%3C/svg%3E") center/24px no-repeat;
+}
